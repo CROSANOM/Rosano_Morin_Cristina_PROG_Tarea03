@@ -47,56 +47,57 @@ public class Posicion {
 		 * para fila incorrecta, 'a' para columna incorrecta) e informe de dicho
 		 * problema. Haz un commit.
 		 */
+
+		// creamos una variable que guarde el mensaje de error en caso se
+		// introduzca erroneamente los parametros
+
+		String mensajeColumna = "Ha introducido un caracter fuera del rango permitido a-h por tanto la columna sera a";
+		String mensajeFila = "Ha introducido un valor fuera del rango permitido 1-8 por tanto la fila sera 1";
+
 		// validamos la entrada de filas con un if-else
 
 		if (fila < 1 || fila > 8) {
-			this.fila = fila; // que diferencia hay entre fila y this.fila ? 
+			this.fila = fila; // que diferencia hay entre fila y this.fila ?
 		} else {
-			this.fila = 1; 
+			this.fila = 1;
+			mensajeFila = mensajeFila;
 		}
 
+		// validamos la entrada de columnas con un switch, también se podría
+		// hacer con una expresion regular
 
-		// validamos la entrada de columnas con un switch
+		switch (columna) {
 
-
-switch ( columna) {
-	
-	case 'a':
-		this.columna=columna;
-		break;
-	case 'b':
-		this.columna=columna;
-		break;
-	case 'c':
-		this.columna=columna;
-		break;
-	case 'd':
-		this.columna=columna;
-	break;
-	case 'e':
-		this.columna=columna;
-		break;
-	case 'f':
-		this.columna=columna;
-		break;
-	case 'g':
-		this.columna=columna;
-		break;
-	case 'h':
-		this.columna=columna;
-		break;
-	default :
-		this.columna='a';
-		break;
-	}// cierre de switch
-	
-		
-         
-			
-			
-		}
-		
-		
+		case 'a':
+			this.columna = columna;
+			break;
+		case 'b':
+			this.columna = columna;
+			break;
+		case 'c':
+			this.columna = columna;
+			break;
+		case 'd':
+			this.columna = columna;
+			break;
+		case 'e':
+			this.columna = columna;
+			break;
+		case 'f':
+			this.columna = columna;
+			break;
+		case 'g':
+			this.columna = columna;
+			break;
+		case 'h':
+			this.columna = columna;
+			break;
+		default:
+			this.columna = 'a';
+			mensajeColumna = mensajeColumna;
+			break;
+		}// cierre de switch
 
 	}
 
+}
