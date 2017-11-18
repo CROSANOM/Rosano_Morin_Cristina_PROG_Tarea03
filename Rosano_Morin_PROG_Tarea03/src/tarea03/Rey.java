@@ -19,13 +19,11 @@ public class Rey {
 	/**
 	 * @param color
 	 */
-	public Rey(Color color) { // sobre carga de constructor pasando por
-								// parametro color
+	public Rey(Color color) { // sobre carga de constructor pasando por parametro color 
+		
+String mensajeRBlanco="La posición del rey Blanco es fila 1 columna e";
+String mensajeRNegro="La posición del rey Negro es fila 8 columana e";
 
-		String mensajeRBlanco = "El rey blanco esta en fila1 columna e";
-		String mensajeRNegro = "El rey blanco esta en fila8 columna e";
-
-		// validamos la entrada de filas con un if-else
 
 		if (color == Color.BLANCO) {
 			this.posicion.setColumna('e');
@@ -47,7 +45,20 @@ public class Rey {
 				System.out.println("posicion introducida incorrecta, revisar posición");
 			}
 
-		}
+		} // fin if
+
+	}// constructor
+
+	/**
+	 * Crea un constructor por defecto para la clase que cree un rey blanco. 
+	 * 
+	 */
+	Rey reyblanco=new Rey(Color.BLANCO);
+			
+		
+    
+	
 
 	}
-}
+	
+
