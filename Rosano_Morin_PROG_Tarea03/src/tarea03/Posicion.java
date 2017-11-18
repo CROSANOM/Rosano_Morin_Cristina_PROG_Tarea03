@@ -3,56 +3,57 @@
  */
 package tarea03;
 
+//Añade comentarios tipo javadoc a la clase y a cada uno de los métodos
+
+/**
+ * @author crosanom
+ * @version1.0
+ *
+ */
+
 /**
  * @author crosanom
  *
  */
+public class Posicion {
 
-// Crear la clase Posición
-
-public class Posicion {// clase inicio
-
-	/*
-	 * Atributos de la clase privados podremos acceder a los mismos con los
-	 * metodos get y set.
-	 * 
+	// Atributos
+	/**
+	 * fila de la posición
 	 */
-
 	private int fila;
+	/**
+	 * columna de la posición
+	 */
 	private char columna;
 
 	// Constructor por defecto
 
-	public Posicion() {// constructor inicio
+	/**
+	 * Reserva un espacio en memoria para la posicion del rey no devuelve ningun
+	 * valor explicitamente
+	 */
 
-	}// cierre constructor
+	public Posicion() {
+
+	}
 
 	/**
-	 * Crea un constructor para esta clase que acepte como parámetros la fila y
-	 * la columna y que los asigne a los atributos si son correctos (las filas
-	 * van del 1 al 8 -ambos inclusive- y las columnas de la 'a' a la 'h' -ambos
-	 * inclusive-) y si no le ponga un valor por defecto (1 para fila
-	 * incorrecta, 'a' para columna incorrecta) e informe de dicho problema. Haz
-	 * un commit.
+	 * Sobre carga del constructor inicial ahora acepta dos parametros
+	 * 
+	 * @param fila
+	 *            fila de la posición del rey
+	 * @param columna
+	 *            columna de la posición del rey
 	 */
-	// Sobrecarga de constructor Posición, ahora acepta como parámetros filas y
-	// columnas
 
 	public Posicion(int fila, char columna) { // constructor parametros
-		/**
-		 * Crea un constructor para esta clase que acepte como parámetros la
-		 * fila y la columna y que los asigne a los atributos si son correctos
-		 * (las filas van del 1 al 8 -ambos inclusive- y las columnas de la 'a'
-		 * a la 'h' -ambos inclusive-) y si no le ponga un valor por defecto (1
-		 * para fila incorrecta, 'a' para columna incorrecta) e informe de dicho
-		 * problema. Haz un commit.
-		 */
 
 		// creamos una variable que guarde el mensaje de error en caso se
 		// introduzca erroneamente los parametros
 
-		String mensajeColumna = "Ha introducido un caracter fuera del rango permitido a-h por tanto la columna sera a";
-		String mensajeFila = "Ha introducido un valor fuera del rango permitido 1-8 por tanto la fila sera 1";
+		String mensajeColumna = "Ha introducido un caracter fuera del rango permitido ( a-h)  por tanto la columna sera a";
+		String mensajeFila = "Ha introducido un valor fuera del rango permitido (1-8) por tanto la fila sera 1";
 
 		// validamos la entrada de filas con un if-else
 
@@ -62,14 +63,10 @@ public class Posicion {// clase inicio
 			this.fila = 1;
 			mensajeFila = mensajeFila;
 		}
+		// validamos la entrada de columnas con un switch, se debería hacer con
+		// una experesión regular.
 
-		/*
-		 * validamos la entrada de columnas con un switch, también se podría
-		 * hacer con una expresion regular
-		 */
-
-		switch (columna) {// inicio switch
-
+		switch (columna) {
 		case 'a':
 			this.columna = columna;
 			break;
@@ -102,7 +99,7 @@ public class Posicion {// clase inicio
 
 	}
 
-	// crear metodos get y set para acceso a los atributos
+	// creamos los metodos getters y setters
 
 	/**
 	 * @return the fila
@@ -135,9 +132,9 @@ public class Posicion {// clase inicio
 		this.columna = columna;
 	}
 
-	/**
-	 * Crea un método llamado toString que devolverá un String y será la
-	 * representación de la fila y la columna usando el atajo de eclipse. 
+	/*
+	 * creamos un metodo to String que devuelve String mensaje de informacion de
+	 * la columna y de la fila indicando la posicion del rey
 	 */
 
 	@Override
@@ -145,4 +142,4 @@ public class Posicion {// clase inicio
 		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
 	}
 
-}// fin clase
+}
