@@ -43,14 +43,11 @@ public class Rey {
 				this.posicion.setFila(8);
 				this.posicion = this.posicion;
 				System.out.println(mensajeRNegro);
-			}else{
-				System.out.println("posicion introducida incorrecta, revisar posición ");
+			} else {
+				System.out.println("posicion introducida incorrecta, revisar posición");
+			}
+
 		}
 
 	}
-
-	// if (color==color.NEGRO)
-
-	// validamos la entrada de columna
-
 }
