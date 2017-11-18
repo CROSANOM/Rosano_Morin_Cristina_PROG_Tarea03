@@ -102,8 +102,8 @@ public class Posicion {// clase inicio
 
 	}
 
-	// crear metodos get y set para acceso a los atributos 
-	
+	// crear metodos get y set para acceso a los atributos
+
 	/**
 	 * @return the fila
 	 */
@@ -128,10 +128,21 @@ public class Posicion {// clase inicio
 
 	/**
 	 * @param columna
-	 *            the columna to set
+	 *            set
+	 * 
 	 */
 	public void setColumna(char columna) {
 		this.columna = columna;
+	}
+
+	/**
+	 * Crea un método llamado toString que devolverá un String y será la
+	 * representación de la fila y la columna usando el atajo de eclipse. 
+	 */
+
+	@Override
+	public String toString() {
+		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
 	}
 
 }// fin clase
