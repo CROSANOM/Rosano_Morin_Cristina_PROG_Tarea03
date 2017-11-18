@@ -54,6 +54,50 @@ String mensajeRNegro="La posición del rey Negro es fila 8 columana e";
 	 * 
 	 */
 	Rey reyblanco=new Rey(Color.BLANCO);
+
+	
+	// Getters and Setters 
+	/**
+	 * @return the color
+	 */
+	public Color getColor() {
+		return color;
+	}
+
+	/**
+	 * @param color the color to set
+	 */
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	/**
+	 * @return the posicion
+	 */
+	public Posicion getPosicion() {
+		return posicion;
+	}
+
+	/**
+	 * @param posicion the posicion to set
+	 */
+	public void setPosicion(Posicion posicion) {
+		this.posicion = posicion;
+	}
+
+	/**
+	 * @return the reyblanco
+	 */
+	public Rey getReyblanco() {
+		return reyblanco;
+	}
+
+	/**
+	 * @param reyblanco the reyblanco to set
+	 */
+	public void setReyblanco(Rey reyblanco) {
+		this.reyblanco = reyblanco;
+	}
 			
 		
     
