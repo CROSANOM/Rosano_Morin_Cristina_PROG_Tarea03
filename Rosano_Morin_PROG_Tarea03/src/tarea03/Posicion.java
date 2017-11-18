@@ -10,7 +10,7 @@ package tarea03;
 
 // Crear la clase Posición
 
-public class Posicion {
+public class Posicion {// clase inicio
 
 	/*
 	 * Atributos de la clase privados podremos acceder a los mismos con los
@@ -23,9 +23,9 @@ public class Posicion {
 
 	// Constructor por defecto
 
-	public Posicion() {
+	public Posicion() {// constructor inicio
 
-	}
+	}// cierre constructor
 
 	/**
 	 * Crea un constructor para esta clase que acepte como parámetros la fila y
@@ -38,7 +38,7 @@ public class Posicion {
 	// Sobrecarga de constructor Posición, ahora acepta como parámetros filas y
 	// columnas
 
-	public Posicion(int fila, char columna) { //
+	public Posicion(int fila, char columna) { // constructor parametros
 		/**
 		 * Crea un constructor para esta clase que acepte como parámetros la
 		 * fila y la columna y que los asigne a los atributos si son correctos
@@ -63,10 +63,12 @@ public class Posicion {
 			mensajeFila = mensajeFila;
 		}
 
-		// validamos la entrada de columnas con un switch, también se podría
-		// hacer con una expresion regular
+		/*
+		 * validamos la entrada de columnas con un switch, también se podría
+		 * hacer con una expresion regular
+		 */
 
-		switch (columna) {
+		switch (columna) {// inicio switch
 
 		case 'a':
 			this.columna = columna;
@@ -96,8 +98,40 @@ public class Posicion {
 			this.columna = 'a';
 			mensajeColumna = mensajeColumna;
 			break;
-		}// cierre de switch
+		}
 
 	}
 
-}
+	// crear metodos get y set para acceso a los atributos 
+	
+	/**
+	 * @return the fila
+	 */
+	public int getFila() {
+		return fila;
+	}
+
+	/**
+	 * @param fila
+	 *            the fila to set
+	 */
+	public void setFila(int fila) {
+		this.fila = fila;
+	}
+
+	/**
+	 * @return the columna
+	 */
+	public char getColumna() {
+		return columna;
+	}
+
+	/**
+	 * @param columna
+	 *            the columna to set
+	 */
+	public void setColumna(char columna) {
+		this.columna = columna;
+	}
+
+}// fin clase
