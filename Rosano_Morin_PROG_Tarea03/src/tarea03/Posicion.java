@@ -11,10 +11,7 @@ package tarea03;
  *
  */
 
-/**
- * @author crosanom
- *
- */
+
 public class Posicion {
 
 	// Atributos
@@ -64,7 +61,7 @@ public class Posicion {
 			mensajeFila = mensajeFila;
 		}
 		// validamos la entrada de columnas con un switch, se debería hacer con
-		// una experesión regular.
+		// una experesión regular
 
 		switch (columna) {
 		case 'a':
@@ -139,7 +136,7 @@ public class Posicion {
 
 	@Override
 	public String toString() {
-		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+		return "La posición del Rey es  fila" + fila + ",  columna=" + columna + " ";
 	}
 
 }
