@@ -2,26 +2,31 @@
  * 
  */
 package tarea03;
-
 /**
- * @author crosanom Clase rey con dos atributos color y posicion
+ * @author crosanom
+ * @version 1.1 Clase rey con dos atributos color y posicion
  */
 
 public class Rey {
 
+	/*
+	 * Atributos de la clase rey son: color y posición  default
+	 * acceso a cualquier clase dentro del paquete tarea
+	 */
+
 	/**
-	 * Atributos de la clase rey son: color y posición con un modificador
-	 * default acceso a cualquier clase dentro del paquete tarea 03
+	 * atributos de la clase
 	 */
 	Color color;
 	Posicion posicion;
 	Direccion direccion;
 
-	/**
+	/**constructor Rey que se le pasa 
 	 * @param color
+	 * 
 	 */
-	public Rey(Color color) { // sobre carga de constructor pasando por
-								// parametro color
+
+	public Rey(Color color) {
 
 		String mensajeRBlanco = "La posición del rey Blanco es fila 1 columna e";
 		String mensajeRNegro = "La posición del rey Negro es fila 8 columana e";
@@ -46,18 +51,30 @@ public class Rey {
 				System.out.println("posicion introducida incorrecta, revisar posición");
 			}
 
-		} // fin if
+		}
 
-	}// constructor
-
+	}
+	
 	/**
-	 * Crea un constructor por defecto para la clase que cree un rey blanco.
+	 * Constructor que crear un rey Blanco
+	 */
+	/**
 	 * 
 	 */
 	Rey reyblanco = new Rey(Color.BLANCO);
 
-	// Getters and Setters
+	
+	//Getter and Setter de los atributos: Color, Posicion, Direccion
+	
 	/**
+	 * @return the reyblanco
+	 */
+	protected Rey getReyblanco() {
+		return reyblanco;
+	}
+
+	
+	/**getColor
 	 * @return the color
 	 */
 	public Color getColor() {
@@ -65,80 +82,63 @@ public class Rey {
 	}
 
 	/**
+	 * Metodo set que pasa 
 	 * @param color
-	 *            the color to set
 	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
-
-	/**
-	 * @return the posicion
-	 */
+/**
+ * Metodo get Posicion devuelve posicion
+ * @return
+ */
 	public Posicion getPosicion() {
 		return posicion;
 	}
-
-	/**
-	 * @param posicion
-	 *            the posicion to set
-	 */
+/**
+ * Metodo setPosicion 
+ * @param posicion
+ */
 	public void setPosicion(Posicion posicion) {
 		posicion = posicion;
-
 	}
 
-	/**
-	 * @return the reyblanco
-	 */
-	public Rey getReyblanco() {
-		return reyblanco;
-	}
-
-	/**
-	 * @param reyblanco
-	 *            the reyblanco to set
-	 */
-	public void setReyblanco(Rey reyblanco) {
-		this.reyblanco = reyblanco;
-	}
-
-	/*
-	 * Creado el metodo to String a traves del a tajo del IDE source
-	 */
-	/**
-	 * @return the direccion
-	 */
+/**
+ * Metodo getDireccion
+ * @return direccion
+ */
 	public Direccion getDireccion() {
 		return direccion;
 	}
 
 	/**
+	 * Metodo setDireccion pasa 
 	 * @param direccion
-	 *            the direccion to set
 	 */
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 
 	}
-
+/**
+ * Metodo toString usa con IDE
+ */
 	@Override
 	public String toString() {
 		return "Rey [color=" + color + ", posicion=" + posicion + "]";
 	}
 
-	// crear mueve
-
+	/**metodo mueve modifica Direccion pasa
+	 * @param direccion
+	 */
 	public static void mueve(Direccion direccion) {
 
+		Posicion posicion1=new Posicion();
+		
 		if (direccion == Direccion.ESTE) {
-
-			// no consigo acceder a posicion
-			// para poder acceso posicion.set (fila , columna) y asi cambiar la
-			// posicion del rey
-			// en base a la direccion que ocupe.
-
-			System.out.println(" Si El rey se ha movido a la columna F ");
+            posicion1.setColumna('f');
+            posicion1.setFila(1);
+			System.out.println(" Si El rey se ha movido a la columna F, sigue en la misma fila"
+					+ "");
 		} else {
 
 			String mensajePosicion = "El rey no esta en una posición correcta";
