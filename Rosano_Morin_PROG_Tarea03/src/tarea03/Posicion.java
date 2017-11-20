@@ -3,6 +3,7 @@
  */
 package tarea03;
 
+
 //Añade comentarios tipo javadoc a la clase y a cada uno de los métodos
 
 /**
@@ -55,14 +56,27 @@ public class Posicion {
 		// validamos la entrada de filas con un if-else
 
 		if (fila < 1 || fila > 8) {
-			this.fila = fila; // que diferencia hay entre fila y this.fila ?
+			this.fila = fila; // this.fila  atributo objeto
+	
 		} else {
 			this.fila = 1;
-			mensajeFila = mensajeFila;
+			System.out.println(mensajeFila);
 		}
 		// validamos la entrada de columnas con un switch, se debería hacer con
-		// una experesión regular
+		// una expresión regular similar a esta 
 
+		// FORMA CON EXPRESION REGULAR.
+		if (Character.toString(columna).matches("[a-hA-H]")) {
+			this.columna = columna;
+		} else {
+			this.columna ='a';
+			System.out.println(mensajeColumna);
+		}
+		
+		
+		// FIN DE VALIDACION CON EXPRESION REGULAR.
+		
+		
 		switch (columna) {
 		case 'a':
 			this.columna = columna;
@@ -90,7 +104,7 @@ public class Posicion {
 			break;
 		default:
 			this.columna = 'a';
-			mensajeColumna = mensajeColumna;
+			System.out.println(mensajeColumna);
 			break;
 		}
 
