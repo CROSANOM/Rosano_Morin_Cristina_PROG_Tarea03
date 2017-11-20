@@ -19,132 +19,123 @@ public class Rey {
 	 */
 	Color color;
 	Posicion posicion;
-	Direccion direccion;
-
+	
+	//Tablero ajedrez
+	//static int filaTablero [ ] = {1,2,3,4,5,6,7,8};
+	char columnaTablero [ ] = {'a','b','c','d','e','f','g','h'};
+	
+	
+	/** 
+	 * Constructor por defecto.
+	 * 
+	 */
+	public Rey() {
+		this.posicion.setFila(1);
+		this.posicion.setColumna('e');
+		this.color = color.BLANCO;
+	}
+	
+	
 	/**constructor Rey que se le pasa 
 	 * @param color
 	 * 
 	 */
 
-	public Rey(Color color) {
+	public Rey (Color color) {
 
 		String mensajeRBlanco = "La posición del rey Blanco es fila 1 columna e";
 		String mensajeRNegro = "La posición del rey Negro es fila 8 columana e";
 
-		if (color == Color.BLANCO) {
-			this.posicion.setColumna('e');
-			this.posicion = this.posicion;
-			System.out.println(mensajeRBlanco);
-
+		if (color == color.BLANCO) {
 			this.posicion.setFila(1);
-			this.posicion = this.posicion;
-
-			if (color == Color.NEGRO) {
-
-				this.posicion.setColumna('e');
-				this.posicion = this.posicion;
-
-				this.posicion.setFila(8);
-				this.posicion = this.posicion;
-				System.out.println(mensajeRNegro);
-			} else {
-				System.out.println("posicion introducida incorrecta, revisar posición");
-			}
-
+			this.posicion.setColumna('e');
 		}
+			
+		if (color == color.NEGRO) {
+			this.posicion.setFila(8);
+			this.posicion.setColumna('e');
+		} 
 
-	}
+	}	
 	
-	/**
-	 * Constructor que crear un rey Blanco
-	 */
-	/**
-	 * 
-	 */
-	Rey reyblanco = new Rey(Color.BLANCO);
 
+	//Getters  de los atributos: Color, Posicion.
 	
-	//Getter and Setter de los atributos: Color, Posicion, Direccion
-	
-	/**
-	 * @return the reyblanco
-	 */
-	protected Rey getReyblanco() {
-		return reyblanco;
-	}
 
 	
-	/**getColor
+	/**
+	 * get color 
 	 * @return the color
 	 */
-	public Color getColor() {
+	protected Color getColor() {
 		return color;
 	}
 
+
 	/**
-	 * Metodo set que pasa 
-	 * @param color
+	 * get posicion
+	 * @return the posicion
 	 */
-	public void setColor(Color color) {
-		this.color = color;
-	}
-/**
- * Metodo get Posicion devuelve posicion
- * @return
- */
-	public Posicion getPosicion() {
+	protected Posicion getPosicion() {
 		return posicion;
 	}
-/**
- * Metodo setPosicion 
- * @param posicion
- */
-	public void setPosicion(Posicion posicion) {
-		posicion = posicion;
-	}
 
-/**
- * Metodo getDireccion
- * @return direccion
- */
-	public Direccion getDireccion() {
-		return direccion;
-	}
 
 	/**
-	 * Metodo setDireccion pasa 
-	 * @param direccion
+	 * Metodo toString usa con IDE
 	 */
-	public void setDireccion(Direccion direccion) {
-		this.direccion = direccion;
-
-	}
-/**
- * Metodo toString usa con IDE
- */
 	@Override
 	public String toString() {
-		return "Rey [color=" + color + ", posicion=" + posicion + "]";
+		return "Rey [color =" + color + ", posicion=" + posicion + "]";
 	}
 
 	/**metodo mueve modifica Direccion pasa
 	 * @param direccion
 	 */
-	public static void mueve(Direccion direccion) {
+	public void mueve (Direccion direccion) {
 
-		Posicion posicion1=new Posicion();
-		
-		if (direccion == Direccion.ESTE) {
-            posicion1.setColumna('f');
-            posicion1.setFila(1);
-			System.out.println(" Si El rey se ha movido a la columna F, sigue en la misma fila"
-					+ "");
-		} else {
-
-			String mensajePosicion = "El rey no esta en una posición correcta";
-
-			direccion = Direccion.ESTE;
+		// Comprobar si puede moverse en el tablero.
+		// Cuando es norte.
+		if (direccion == direccion.NORTE) {
+			
+			//Saber donde estamos.
+			if (posicion.getFila()>1) {
+				posicion.setFila(posicion.getFila()-1);	
+			} else {
+				System.out.println("No es posible realizar ese movimiento.");
+			}	
 		}
+			
+		if (direccion == direccion.SUR) {
+			
+			//Saber donde estamos.
+			if (posicion.getFila()<8) {
+				posicion.setFila(posicion.getFila()+1);	
+			} else {
+				System.out.println("No es posible realizar ese movimiento.");
+			}	
+		}	
+			
+		// Cuando es Oeste.
+		if (direccion == direccion.OESTE) {
+			
+			//Saber donde estamos en el tablero para las columnas.
+			for (int i=0 ; i<8 ; i++) {
+				
+				// Si encuentra la letra en el tablero.
+				if (posicion.getColumna() == columnaTablero[i]) {
+					// Si es true, ya lo hemos encontrado, comprobar si puede moverse.	
+					if (i>1) {
+						posicion.setColumna(columnaTablero[i-1]);
+						
+					} else {
+						System.out.println("No es posible realizar ese movimiento.");
+					}
+				}	
+			
+		}
+		
+		
 
 	}
 
