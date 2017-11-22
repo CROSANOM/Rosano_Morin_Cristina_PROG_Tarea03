@@ -1,62 +1,71 @@
 package tarea03;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import utilidades.Entrada;
 
 public class Principal {
 
+	static String colorElegido ="";
+	static Rey miFicha;
+	//static Color color = null;
+	static int opcion ;
+	//static Direccion direccion = null;	
+	
 	public static void main(String[] args) {
 
-		String colorRey;
+		
+		 //* validar que el usuario introduce correctamente el color ahora mismo
+		 // no me funciona la validación
 
-		/*
-		 * validar que el usuario introduce correctamente el color ahora mismo
-		 * no me funciona la validación do {
-		 * 
-		 * System.out.println("INTRODUCE color "); color = Entrada.cadena();
-		 * 
-		 * // Mensaje recordartorio de entrada. if (color !="blanco" ||
-		 * color!="negro") {
-		 * System.out.println("error rey solo puede ser Blanco o Negro"); }
-		 * 
-		 * } while (color !="blanco" || color!="negro");
+		
+		/**
+		 * Pedir color por teclado.
+		 * Crear ficha.
+		 * Menu de mover ficha hasta salir.
+		 * Mostrar en pantalla movimientos.
 		 */
+		
+		
+		System.out.println("Que color vas a jugar? Blanco o Negro?");
+		colorElegido = Entrada.cadena();
+		
+		// Crear ficha del color elegido.
+		miFicha = new Rey(Color.valueOf(colorElegido));
+				
+		do {
+		
+			System.out.println("Elige opción:"
+							+ "\n1.- Norte" +
+					   	      "\n2.- Sur"   +
+							  "\n3.- Este"  +
+							  "\n4.- Oeste" +
+							  "\n0.- Salir");
+			
+			//Recoger un entero por consola
+			opcion = Entrada.entero(); 
 
-
-		
-		System.out.println("Dame un color para el rey ");
-		colorRey = Entrada.cadena();
-		// String colorIncorrecto;
-
-		Pattern pat = Pattern.compile("(blanco|Negro)+");
-		Matcher mat = pat.matcher(colorRey);
-		if (mat.matches()) {
-			System.out.println("COLOR ES CORRECTO");
-
-		
-		} else { // deberia de haber usado un do while pero no daba con la
-					// tecla.
-			System.out.println("COLOR ES INCORRECTO");
-			System.out.println("RECUERDA QUE el color del Rey puede ser blanco o negro");
-			System.out.println("Dame un color para el rey");
-			colorRey = Entrada.cadena();
-		}
-
-		
-		// Crear un rey usando el constructor de la clase Rey
-		
-		System.out.println("comprobar en que parte del codigo se sale");
-		
-		Rey miFiguraRey =new Rey ();
-		miFiguraRey.getColor();
-		System.out.println("el rey es"+miFiguraRey.color);
-		
-
+			//Ejemplo de switch case en Java
+			switch(opcion){
+			case 1: 
+				miFicha.mueve(Direccion.NORTE);
+				break;
+			case 2:
+				miFicha.mueve(Direccion.SUR);
+				break;
+			case 3:
+				miFicha.mueve(Direccion.ESTE);
+				break;
+			case 4:
+				miFicha.mueve(Direccion.OESTE);
+				break;
+			default:
+				break;
+				
+			}
+			
+		} while (opcion != 0) ;
 		
 		
-		
-
+			
 	}// main
 
 }

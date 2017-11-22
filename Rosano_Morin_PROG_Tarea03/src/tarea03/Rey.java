@@ -20,18 +20,22 @@ public class Rey {
 	 */
 	Color color;
 	Posicion posicion;
+	Direccion direccion; // se incluye para probar en el main el switch 
 
-	// Tablero ajedrez
+	// se crea un array para recorrer las columnas del Tablero ajedrez
 	char columnaTablero[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
 
 	/**
-	 * Constructor por defecto.
+	 * Constructor por defecto con atributos correspondientes al reyBlanco.
 	 * 
 	 */
-	public Rey() {
-		this.posicion.setFila(1);
+	public Rey() { // contructor por defecto
+
+		this.posicion.setFila(1);// atributos posicion hace uso del metodo set
+		// de la clase Posicion
 		this.posicion.setColumna('e');
-		this.color = color.BLANCO;
+		this.color = color.BLANCO; // atributo color hace uso de la clase Enum
+		// color
 	}
 
 	/**
@@ -49,11 +53,13 @@ public class Rey {
 		if (color == color.BLANCO) {
 			this.posicion.setFila(1);
 			this.posicion.setColumna('e');
+			System.out.println(mensajeRBlanco);
 		}
 
 		if (color == color.NEGRO) {
 			this.posicion.setFila(8);
 			this.posicion.setColumna('e');
+			System.out.println(mensajeRNegro);
 		}
 
 	}
@@ -79,7 +85,7 @@ public class Rey {
 	}
 
 	/**
-	 * Metodo toString usa con IDE
+	 * Metodo toString usa con ataja que proporciona el IDE
 	 */
 	@Override
 	public String toString() {
@@ -95,11 +101,13 @@ public class Rey {
 
 		// Comprobar si puede moverse en el tablero.
 		// Cuando es norte.
+
 		if (direccion == direccion.NORTE) {
 
 			// Saber donde estamos.
 			if (posicion.getFila() > 1) {
 				posicion.setFila(posicion.getFila() - 1);
+				System.out.println("Ficha movida a Columna: " + posicion.getColumna() + " Fila: " + posicion.getFila());
 			} else {
 				System.out.println("No es posible realizar ese movimiento.");
 			}
@@ -110,6 +118,7 @@ public class Rey {
 			// Saber donde estamos.
 			if (posicion.getFila() < 8) {
 				posicion.setFila(posicion.getFila() + 1);
+				System.out.println("Ficha movida a Columna: " + posicion.getColumna() + " Fila: " + posicion.getFila());
 			} else {
 				System.out.println("No es posible realizar ese movimiento.");
 			}
@@ -127,7 +136,7 @@ public class Rey {
 					// moverse.
 					if (i > 1) {
 						posicion.setColumna(columnaTablero[i - 1]);
-
+						System.out.println("Ficha movida a Columna: " + posicion.getColumna() + " Fila: " + posicion.getFila());
 					} else {
 						System.out.println("No es posible realizar ese movimiento.");
 					}
@@ -147,7 +156,7 @@ public class Rey {
 						if (i < 8) {
 							// Se actualiza posicion.
 							posicion.setColumna(columnaTablero[i + 1]);
-
+							System.out.println("Ficha movida a Columna: " + posicion.getColumna() + " Fila: " + posicion.getFila());
 						} else {
 							System.out.println("No es posible realizar ese movimiento.");
 						}
